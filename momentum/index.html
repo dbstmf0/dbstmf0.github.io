@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOMENTUM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="top">
+        <h3>2024/12/25</h3>
+        <h1 class="clock">00:00</h1>
+    </div>
+    <div class="login">
+        <p class="hidden">Hello</p>
+        <button class="logout hidden">LOGOUT</button>
+        <form id="loginForm">
+            <input type="text" placeholder="What is your Name?" required>
+            <!-- <button class="login">로그인</button> -->
+        </form>
+        <form id="todoForm">
+            <input class="hidden" type="text" placeholder="What is your main focus  for today?" required>
+        </form>
+        <div class="links">
+            <i class="fa-brands fa-google fa-lg"></i>
+            <i class="fa-brands fa-slack fa-lg"></i>
+            <i class="fa-brands fa-instagram fa-lg"></i>
+        </div>
+    </div>
+    <ul class="hidden" id="todoList"></ul>
+    <script src="./script/login.js"></script>
+    <script src="./script/url.js"></script>
+    <script src="./script/todolist.js"></script>
+    <script src="./script/img_random.js"></script>
+    <script src="./script/clock.js"></script>
+    <script src="./script/weather.js"></script>
+</body>
+</html>
