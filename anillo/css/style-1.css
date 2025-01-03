@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+:root{
+   /*** color ***/
+    --color-main: #7e96b2;
+    --color-bg: #f5f6f0;
+    --color-font: #000;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0 5rem;
+    overflow-x: hidden;
+    font-family: 'MaruBuriLight', 'sans-serif';
+    font-size: 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-font);
+}
+
+/* icon 영역 */
+nav{margin: 0 auto; background-color: var(--color-bg);}
+.icons{height: 5rem; display: flex; justify-content: space-between; align-items: center;}
+.icons img{width: 25px; height: 25px;}
+.top-right img{margin-left: 15px;}
+
+/* wrap 영역 */
+.wrap{display: flex; justify-content: space-around; height: 90rem; background-color: var(--color-main);}
+.main{display: flex; align-items: center; gap: 8rem; margin: 0 8rem;}
+.txt{color: var(--color-bg);}
+.txt > h1 > a{font-size: 20rem; color: var(--color-bg); text-shadow: 4px 4px #626262;}
+.txtKo{font-size: 4rem; color: var(--color-bg); font-family: 'MaruBuri';}
+.txtEn{font-size: 2rem; color: var(--color-bg); font-family: 'MaruBuri';}
+.txt > span:last-child{font-size: 4rem; color: var(--color-bg); margin-left: 1.2rem;}
+
+/* wrapper 영역 */
+
+
+/* vegan 영역 */
+.vegan{display: flex; justify-content: center;}
+.vegan > a > img{width: 170rem;}
+
+/* footer 영역 */
+footer{margin-top: 2rem; display: flex; justify-content: center; flex-direction: column; background-color: var(--color-bg);}
+footer > h3{font-size: 3rem; font-family: 'MaruBuriLight'; text-align: center;}
+.f-txt{margin: 5rem 0;}
+.company > p:last-child{padding-top: 2rem;}
+.f-txt,
+.f-right{display: flex; justify-content: space-around; align-items: center;}
+.f-txt div{font-size: 1.5rem; font-family: 'MaruBuriLight'; text-align: center;}
+.f-right{gap: 10rem;}

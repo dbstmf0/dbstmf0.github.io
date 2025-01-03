@@ -1,0 +1,302 @@
+@charset "utf-8";
+
+:root{
+   /*** color ***/
+   --color-main: #7e96b2;
+   --color-bg: #f5f6f0;
+   --color-font: #000;
+}
+html{
+   font-size: 62.5%;
+}
+body{
+   overflow-x: hidden;
+   font-family: 'MaruBuriLight', 'sans-serif';
+   font-size: 1rem;
+   background-color: var(--color-bg);
+   color: var(--color-font);
+}
+
+/*** nav ***/
+nav{
+   margin: 0 auto;
+   height: 6rem;
+   background-color: var(--color-bg);
+}
+.icons{
+   height: 6rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.top-left > a{
+   margin-left: 3rem;
+}
+.top-left,
+.top-right{
+   display: inline-block;
+}
+.top-left > a > img,
+.top-right > a > img{
+   width: 30px;
+   height: 30px;
+}
+.top-right{
+   margin-right: 3rem;
+}
+.top-right > a{
+   margin-left: 2rem;
+}
+
+/*** section wrap ***/
+.wrap{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 100rem;
+   background-color: var(--color-main);
+}
+.main{
+   display: flex;
+   align-items: center;
+   gap: 8rem;
+   margin: 0 8rem;
+}
+.txt > h1 > a{
+   font-size: 23rem;
+   color: var(--color-bg);
+   text-shadow: 4px 4px #626262;
+}
+.txt > span:nth-of-type(1),
+.txt > span:nth-of-type(2),
+.txt > span:nth-of-type(3){
+   font-size: 5rem;
+   color: var(--color-bg);
+   font-family: 'MaruBuri';
+}
+.txt > span:nth-of-type(3){
+   display: block;
+   margin-top: 7rem;
+   margin-bottom: 2rem;
+}
+.txt > span:nth-of-type(4),
+.txt > span:nth-of-type(5){
+   font-size: 4rem;
+   color: var(--color-bg);
+   font-family: 'MaruBuri';
+}
+.txt > span:last-child{
+   font-size: 5rem;
+   color: var(--color-bg);
+   margin-left: 1.2rem;
+}
+
+/*** section wrapper ***/
+.wrapper{
+   position: relative;
+   height: 200rem;
+   /* width: 80%; */
+   margin: 0 auto;
+   background-color: #fff;
+}
+.item-1{
+   width: 50%;
+   padding: 2rem;
+   position: absolute;
+   left: 15%;
+   top: 0;
+}
+.item-2{
+   width: 50%;
+   padding: 2rem;
+   position: absolute;
+   right: -5%;
+   top: 4rem;
+}
+.center > a > img{
+   width: 59.5rem;
+   height: 69.5rem;
+   margin: 5rem 0;
+}
+.center  a > p  mark{
+   display: inline-block;
+} 
+.tetle{
+   font-size: 5rem;
+   margin-bottom: 2rem;
+}
+.detail{
+   font-size: 2rem;
+   font-family: 'MaruBuriLight';
+   line-height: 4rem;
+}
+/*** mark color ***/
+.Lime{
+   background-color: #c0dca3;
+   height: 1.5rem;
+   line-height: 1.5rem;
+}
+.Fig{
+   background-color: #e4aaa5;
+   height: 1.5rem;
+   line-height: 1.5rem;
+}
+.Amber{
+   background-color: #dfb882;
+   height: 1.5rem;
+   line-height: 1.5rem;
+}
+.Shower{
+   background-color: #9dc5df;
+   height: 1.5rem;
+   line-height: 1.5rem;
+}
+
+/*** vegan ***/
+.vegan{
+   height: 100rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #fff;
+   /* box-sizing: border-box; */
+}
+.vegan > a > img{
+   width: 170rem;
+   /* height: 80rem; */
+}
+
+/*** footer ***/
+footer{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 38rem;
+   background-color: var(--color-bg);
+}
+footer > h3{
+   font-size: 3rem;
+   font-family: 'MaruBuriLight';
+   text-align: center;
+}
+.f-txt{
+   margin: 5rem 0;
+}
+.company > p:last-child{
+   padding-top: 2rem;
+}
+.f-txt,
+.f-right{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+.f-txt div{
+   font-size: 1.5rem;
+   font-family: 'MaruBuriLight';
+   text-align: center;
+}
+.f-right{
+   gap: 10rem;
+}
+
+
+/*** 모바일 사이즈 ***/
+@media screen and (max-width:768px){
+   /***
+   font-size : 7px
+   main-width : 80%
+   height : auto
+   ***/
+   /*** layout 변경 ***/
+   html{
+      font-size: 43.7%;
+   }
+   body{
+      min-width: 320px;
+      margin: 0 auto;
+   }
+   main{
+      height: auto;
+   }
+   .wrap{
+      height: 80rem;
+   }
+   main > nav > .icons img{
+      width: 20px;
+      height: 20px;
+   }
+   .main{
+      height: 80rem;
+      margin: 0 5rem;
+      gap: 3rem;
+   }
+   .main > .txt > h1 > a{
+      font-size: 15rem;
+   }
+   .main > .txt > span{
+      font-size: 3rem;
+   }
+   .txt > span:nth-of-type(3){
+      margin-top: 5rem;
+      margin-bottom: 1rem;
+   }
+   .main > .img > img{
+      width: 40rem;
+      height: 60rem;
+   }
+   .item-1,
+   .item-2,
+   .wrapper{
+      height: auto;
+      position: static;
+      text-align: center;
+   }
+   .item-1,
+   .item-2{
+      margin: 0 auto;
+   }
+   .item-2 > div:first-child{
+      border-top: 3px solid var(--color-main);
+   }
+   .center > a > img{
+      width: 54.8rem;
+      height: 70rem;
+      margin: 3rem 0;
+   }
+   .tetle{
+      font-size: 4rem;
+      margin-bottom: 2rem;
+   }
+   .detail{
+      font-size: 2rem;
+      line-height: 3rem;
+   }
+   .vegan{
+      height: 60rem;
+   }
+   .vegan > a > img{
+      width: 100rem;
+   }
+   footer{
+      height: 20rem;
+   }
+   footer > h3{
+      font-size: 2.5rem;
+      padding: 1.5rem 0;
+   }
+   .f-txt{
+      margin: 2rem 0;
+   }
+   .f-txt div{
+      font-size: 1.5rem;
+      flex-direction: column;
+   }
+   .f-txt > .company{
+      display: none;
+   }
+   .f-right{
+      gap: 5rem;
+   }
+}
