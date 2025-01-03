@@ -206,7 +206,7 @@ main .card > .card-img{
    box-sizing: border-box;
    border-radius: 7px;
    aspect-ratio: 1;
-   background-image: url(./airbnb_img/02b9b15e-120a-4d72-a9dd-bb34ff27c22b.jpeg);
+   background-image: url(./airbnb_img/bg10.jpg);
    background-size: cover;
    display: flex;
    flex-direction: column;
@@ -269,16 +269,16 @@ main .card > .card-txt >p:nth-child(4){
 
 /*** img 변경 ***/
 main .card:nth-child(2) > .card-img{
-   background-image: url(./airbnb_img/02b9b15e-120a-4d72-a9dd-bb34ff27c22b.jpeg);
+   background-image: url(./airbnb_img/bg10.jpg);
 }
 main .card:nth-child(3) > .card-img{
-   background-image: url(./airbnb_img/02b9b15e-120a-4d72-a9dd-bb34ff27c22b.jpeg);
+   background-image: url(./airbnb_img/bg10.jpg);
 }
 main .card:nth-child(4) > .card-img{
-   background-image: url(./airbnb_img/02b9b15e-120a-4d72-a9dd-bb34ff27c22b.jpeg);
+   background-image: url(./airbnb_img/bg10.jpg);
 }
 main .card:nth-child(5) > .card-img{
-   background-image: url(./airbnb_img/02b9b15e-120a-4d72-a9dd-bb34ff27c22b.jpeg);
+   background-image: url(./airbnb_img/bg10.jpg);
 }
 
 /*** footer ***/
