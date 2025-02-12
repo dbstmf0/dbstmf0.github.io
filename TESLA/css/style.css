@@ -6,153 +6,155 @@ a{ text-decoration: none;}
 li{ list-style: none;}
 body{ height: 100vh;}
 
+:root{
+    --font-color: #fff;
+    --font-size: 5rem;
+}
 /*** google font ***/
-.jua-regular {
-    font-family: "Jua", sans-serif;
-    font-weight: 400;
+.cinzel-font{
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
 }
+
 /*** heder 영역 ***/
-header > nav > div.logo{
-    letter-spacing: 10px;
-    cursor: pointer;
+header{
+    height: 100vh;
+    padding-top: 1rem;
+    background-image: url(../img/New-Model-Y.jfif);
+    background-size: cover;
 }
-
-header > nav > ul > li{
-    display: inline-block;
-    margin: 0 10px;
-    cursor: pointer;
-    padding: 5px 7px;
-    border-radius: 5px;
+.logo > a > img{
+    width: 130px;
+    filter: invert(100%);
 }
-header > nav > ul > li:hover{
-    background-color: rgba(0, 0, 0, 0.6);
-}
-header > nav > div.icons > a{
-    margin: 0 3px;
-    color: #fff;
-}
-
-header > nav{
-    width: 90%;
-    min-width: 800px;
-    height: 60px;
+nav{
+    width: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--font-color);
 }
-
-header{
-    height: 100%;
-    background-image: url(../img/main.jfif);
-    background-size: cover;
-    color: #fff;
-    font-size: 14px;
-    position: relative;      
-}
-
-header > div{
-    /*** relative로 변경 ***/
-    /* 
-    position: relative;
-    top: 600px;
-    left: 100px;
-     */
-    
-    /*** absolute로 변경 ***/
-    position: absolute;
-    bottom: 200px;
-    left: 100px;
-}
-
-header> div > p:nth-of-type(1){
-    font-size: 100px;
-    letter-spacing: 3px;
-    line-height: 1;
-}
-
-/*** 메인 영역 ***/
-main > div.card{
-    width: 90%;
-    height: 80vh;
-    margin: 20px auto;
-    background-size: cover;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-main > div.card div.card-txt{
-    margin-top: 50px;
-    text-align: center;
-    color: #fff;
-}
-
-main > div.card div.card-btn{
-    margin-bottom: 40px;
-}
-main > div.card div.card-txt > p{
-    font-size: 60px;
-}
-
-main > div.card > div.card-txt > a{
-    text-decoration: underline;
-    color: #fff;
-}
-
-main > div.one{
-    background-image: url(../img/white.jfif);
-}
-main > div.two > div.card-txt a{
-    text-decoration: none;
-}
-main > div.two{
-    background-image: url(../img/Model-X.png);
-}
-
-main > div.thr{
-    background-image: url(../img/Model-3.png);
-}
-
-main > div.four{
-    position: relative;
-}
-
-main > div.four > video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-main > div.four > div.detail{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-footer{padding: 50px 0;}
-footer > ul{
+nav > ul{
     display: flex;
     justify-content: center;
-    gap: 20px;
-    color: #333;
+    align-items: center;
+    font-weight: bold;
+    gap: 3rem;
 }
+.icons > a > img{
+    width: 30px;
+    margin: 0 8px;
+    filter: invert(100%);
+}
+.zero{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.zero > p{
+    font-size: var(--font-size);
+    font-weight: bolder;
+    text-align: center;
+    color: var(--font-color);
+}
+
+/*** 메인 ***/
+.one{
+    height: 100vh;
+    background-size: cover;
+}
+.two, .detail{
+    position: relative;
+}
+.two > .card-txt{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10rem;
+    font-size: var(--font-size);
+    font-weight: bolder;
+    text-align: center;
+    color: var(--font-color);
+}
+.two > .card-txt > p:last-of-type{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.two > .card-btn{
+    position: absolute;
+    bottom: 10rem;
+}
+.detail > .card-txt{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10rem;
+    font-size: var(--font-size);
+    font-weight: bolder;
+    text-align: center;
+    color: var(--font-color);
+}
+
+/*** 메인 영역 이미지 ***/
+main > div.one{
+    background-image: url(../img/Model-Y.jfif);
+}
+main > div.thr{
+    background-image: url(../img/Model-3.jfif);
+}
+main > div.four{
+    background-image: url(../img/Model-S.jfif);
+}
+main > div.five{
+    background-image: url(../img/Model-X.jfif);
+}
+main > div.six{
+    background-image: url(../img/SolarPanels.jpg);
+}
+main > div.seven{
+    background-image: url(../img/Accessories.jfif);
+}
+
+
+/*** 공통으로 들어가는 영역 ***/
+.card{
+    height: 100vh;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+
+}
+.card > .card-position{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card > .card-position > p{
+    font-size: var(--font-size);
+    font-weight: bolder;
+    text-align: center;
+    color: var(--font-color);
+}
+
+
 /*** 공통 버튼 ***/
 .btn{
-    width: 100px;
+    width: 250px;
     text-align: center;
+    font-size: 1.5rem;
     border-radius: 5px;
     display: inline-block;
-    padding: 10px 100px;
+    padding: 15px 60px;
     opacity: 0.8;
     margin-right: 5px;
     cursor: pointer;
