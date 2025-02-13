@@ -2,13 +2,13 @@
 
 /*** reset.css ***/
 *{ margin: 0; padding: 0;}
-a{ text-decoration: none;}
+a{ text-decoration: none; color: inherit;}
 li{ list-style: none;}
-body{ height: 100vh;}
+body{ height: 100vh; width: 100vw; overflow-x: hidden;}
 
 :root{
     --font-color: #fff;
-    --font-size: 5rem;
+    --font-size: 3rem;
 }
 /*** google font ***/
 .cinzel-font{
@@ -20,7 +20,7 @@ body{ height: 100vh;}
 
 /*** heder 영역 ***/
 header{
-    height: 100vh;
+    height: 100%;
     padding-top: 1rem;
     background-image: url(../img/New-Model-Y.jfif);
     background-size: cover;
@@ -42,7 +42,15 @@ nav > ul{
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    gap: 3rem;
+}
+nav> ul > li{
+    padding: 7px 20px;
+}
+nav > ul > li:hover{
+    padding: 7px 20px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 5px;
 }
 .icons > a > img{
     width: 30px;
@@ -69,7 +77,7 @@ nav > ul{
     height: 100vh;
     background-size: cover;
 }
-.two, .detail{
+.two, .eight{
     position: relative;
 }
 .two > .card-txt{
@@ -78,7 +86,7 @@ nav > ul{
     position: absolute;
     top: 10rem;
     font-size: var(--font-size);
-    font-weight: bolder;
+    font-weight: 600;
     text-align: center;
     color: var(--font-color);
 }
@@ -90,15 +98,56 @@ nav > ul{
     position: absolute;
     bottom: 10rem;
 }
-.detail > .card-txt{
+.eight{
+    justify-content: flex-start;
+}
+.detail{
+    position: absolute;
+    left: 5rem;
+    bottom: 20rem;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 10rem;
+    align-items: flex-start;
     font-size: var(--font-size);
-    font-weight: bolder;
+    font-weight: 600;
     text-align: center;
     color: var(--font-color);
+}
+footer{
+    height: 30vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+}
+footer > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #666;
+    cursor: pointer;
+    flex: 1;
+}
+footer > .footer-txt{
+    text-align: center;
+    flex: 0.5;
+}
+footer > .footer-txt > span{
+    margin-right: 5px;
+    padding-right: 5px;
+    color: #666;
+    border-right: 1px solid #666;
+}
+footer > .footer-txt > span > a{
+    text-decoration: underline;
+    cursor: pointer;
+}
+footer > .footer-txt > span:nth-child(4),
+footer > .footer-txt > span:nth-child(9),
+footer > .footer-txt > span:last-child{
+    border: none;
 }
 
 /*** 메인 영역 이미지 ***/
@@ -141,20 +190,29 @@ main > div.seven{
 }
 .card > .card-position > p{
     font-size: var(--font-size);
-    font-weight: bolder;
+    font-weight: 600;
     text-align: center;
     color: var(--font-color);
+}
+video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 
 /*** 공통 버튼 ***/
 .btn{
-    width: 250px;
+    width: 200px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 5px;
     display: inline-block;
-    padding: 15px 60px;
+    padding: 10px 60px;
     opacity: 0.8;
     margin-right: 5px;
     cursor: pointer;
@@ -168,3 +226,26 @@ main > div.seven{
     color: #fff;
 }
 /* ************************************** */
+
+@media screen and (max-width: 1200px) {
+    .btn{
+        width: 150px;
+    }
+    .detail{
+        bottom: 10rem;
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 823px) {
+    .detail{
+        position: absolute;
+        left: 10rem;
+        bottom: 5rem;
+    }
+    .detail > .card-btn > .btn{
+        width: 400px;
+    }
+}
+
+/* 1200px에서 메뉴 버튼 변경, 마지막 비디오에서 txt 위치 하단으로 변경 */
+/* 823px에서 마지막 비디오에서 button 사이즈 변경 */
