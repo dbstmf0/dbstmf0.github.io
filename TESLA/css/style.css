@@ -157,8 +157,6 @@ footer > .footer-txt > span > a{
     text-decoration: underline;
     cursor: pointer;
 }
-footer > .footer-txt > span:nth-child(4),
-footer > .footer-txt > span:nth-child(9),
 footer > .footer-txt > span:last-child{
     border: none;
 }
@@ -246,7 +244,7 @@ video{
     nav > .nav-menu, nav > .icons{
         display: none;
     }
-    nav > .meun-btn{
+    nav > .menu-btn{
         display: block;
         width: 60px;
         padding: 5px 10px;
@@ -302,11 +300,11 @@ video{
     nav{
         width: 90%;
     }
-    nav > .meun-btn{
+    nav > .menu-btn{
         width: 40px;
         text-align: center;
     }
-    nav > .meun-btn > span{
+    nav > .menu-btn > span{
         font-size: 10px;
     }
     .zero > p{
