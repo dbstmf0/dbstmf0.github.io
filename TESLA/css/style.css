@@ -275,10 +275,10 @@ video{
         font-size: 2rem;
     }
     footer > ul{
-        flex: 0.6;
+        flex: 0.5;
     }
     footer > .footer-txt{
-        flex: 0.4;
+        flex: 0.5;
     }
 }
 @media screen and (max-width: 824px) {
@@ -331,6 +331,9 @@ video{
     footer > ul{
         width: 95%;
         gap: 5px;
+    }
+    footer > .footer-txt{
+        flex: 0.7;
     }
 }
 
