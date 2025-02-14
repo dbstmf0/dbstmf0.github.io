@@ -15,6 +15,7 @@ body{
     font-size: 1rem;
     background-color: var(--color-bg);
     color: var(--color-font);
+    overflow-x: hidden;
 }
 
 /* icon 영역 */
@@ -34,7 +35,7 @@ nav{margin: 0 3rem; background-color: var(--color-bg);}
 .txt > span:last-child{font-size: 4rem; color: var(--color-bg); margin-left: 1.2rem;}
 
 /* wrapper 영역 */
-.wrapper{margin: 4rem 10rem; padding: 2rem 0; display: grid; grid-template-columns: repeat(2, 1fr); border: 3px solid var(--color-main);}
+.wrapper{padding: 4rem 0; display: grid; grid-template-columns: repeat(2, 1fr);}
 .item-1, .item-2{margin: 0 auto;}
 .center > a > img{width: 59.5rem; height: 69.5rem;}
 .center  a > p  mark{display: inline-block;} 
@@ -60,3 +61,82 @@ footer > h3{font-size: 3rem; font-family: 'MaruBuriLight'; text-align: center;}
 .f-right{display: flex; justify-content: space-around; align-items: center;}
 .f-txt div{font-size: 1.5rem; font-family: 'MaruBuriLight'; text-align: center;}
 .f-right{gap: 10rem;}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+    /* wrap 영역 */
+    .txt > h1{font-size: 18rem;}
+    .txtKo{font-size: 2.5rem;}
+    .txtKo:nth-child(1){font-size: 2rem;}
+    .txtEn{font-size: 1.5rem;}
+    .txt > span:last-child{font-size: 3rem; margin-left: 1rem;}
+    .main > .img > img{width: 400px; height: 600px;}
+
+    /* wrapper 영역 */
+    .wrapper{grid-template-columns: repeat(2, 1fr);}
+    .center{margin: 20px 0;}
+    .center > a > img{width: 40rem; height: 50rem;}
+    .tetle{font-size: 3.5rem;}
+    .detail{font-size: 1.5rem; line-height: 3rem;}
+
+    /* vegan 영역 */
+    .vegan > a > img{width: 110rem;}
+
+    /* footer 영역 */
+    .f-txt{width: 95%; margin: 5rem auto; gap: 2rem;}
+    footer > h3{font-size: 2.5rem; text-align: center;}
+    .f-txt div{font-size: 1rem; text-align: center;}
+    .f-right{gap: 7rem;}
+}
+@media screen and (max-width: 768px) {
+    /* icon 영역 */
+    .icons{height: 4rem;}
+    .icons img{width: 20px; height: 20px;}
+
+    /* wrap 영역 */
+    .txt > h1{font-size: 12rem;}
+    .txtKo{font-size: 1.5rem;}
+    .txtKo:nth-child(1){font-size: 1.2rem;}
+    .txtEn{font-size: 1.2rem;}
+    .txt > span:last-child{font-size: 2.5rem; margin-left: 1rem;}
+    .main > .img > img{width: 250px; height: 400px;}
+
+    /* wrapper 영역 */
+    .wrapper{grid-template-columns: repeat(1, 1fr);}
+    .center > a > img{width: 30rem; height: 40rem;}
+    .tetle{font-size: 2.5rem;}
+    .detail{font-size: 1.2rem; line-height: 2rem;}
+
+    /* vegan 영역 */
+    .vegan > a > img{width: 90rem;}
+
+    /* footer 영역 */
+    footer > h3{font-size: 2rem;}
+    .f-txt{margin: 3rem auto;;}
+    .f-txt div{font-size: 1rem;}
+    .f-right{gap: 5rem;}
+}
+@media screen and (max-width: 480px) {
+    /* wrap 영역 */
+    .main{margin: 0 2rem; gap: 2rem;}
+    .txt > h1{font-size: 8rem;}
+    .txtKo{font-size: 1rem;}
+    .txtKo:nth-child(1){font-size: 1rem;}
+    .txtEn{font-size: 1rem;}
+    .txt > span:last-child{font-size: 1.5rem; margin-left: 0.5rem;}
+    .main > .img > img{width: 200px; height: 350px;}
+
+    /* wrapper 영역 */
+    .center > a > img{width: 30rem; height: 40rem;}
+    .tetle{font-size: 2.5rem;}
+    .detail{font-size: 1.2rem; line-height: 2rem;}
+
+    /* vegan 영역 */
+    .vegan > a > img{width: 50rem;}
+
+    /* footer 영역 */
+    footer > h3{font-size: 2rem;}
+    .f-txt{margin: 3rem auto; width: 80%; flex-direction: column;}
+    .f-txt div{font-size: 1rem;}
+    .f-right{gap: 5rem; flex-direction: column;}
+}
