@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*** reset.css ***/
-*{ margin: 0; padding: 0;}
+*{ margin: 0; padding: 0; box-sizing: border-box;}
 a{ text-decoration: none; color: inherit;}
 li{ list-style: none;}
 body{ height: 100vh; width: 100vw; overflow-x: hidden;}
@@ -20,6 +20,7 @@ body{ height: 100vh; width: 100vw; overflow-x: hidden;}
 
 /*** heder 영역 ***/
 header{
+    width: 100%;
     height: 100%;
     padding-top: 1rem;
     background-image: url(../img/New-Model-Y.jfif);
@@ -37,16 +38,16 @@ nav{
     align-items: center;
     color: var(--font-color);
 }
-nav > ul{
+nav > .nav-menu{
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
 }
-nav> ul > li{
+nav > .nav-menu > li{
     padding: 7px 20px;
 }
-nav > ul > li:hover{
+nav > .nav-menu > li:hover{
     padding: 7px 20px;
     background-color: #eee;
     color: #333;
@@ -57,6 +58,9 @@ nav > ul > li:hover{
     margin: 0 8px;
     filter: invert(100%);
 }
+nav > .meun-btn{
+    display: none;
+}
 .zero{
     margin-top: 5rem;
     display: flex;
@@ -66,13 +70,16 @@ nav > ul > li:hover{
     gap: 1rem;
 }
 .zero > p{
-    font-size: var(--font-size);
+    font-size: 4rem;
     font-weight: bolder;
     text-align: center;
     color: var(--font-color);
 }
 
 /*** 메인 ***/
+main{
+    width: 100%;
+}
 .one{
     height: 100vh;
     background-size: cover;
@@ -84,7 +91,7 @@ nav > ul > li:hover{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 10rem;
+    top: 5rem;
     font-size: var(--font-size);
     font-weight: 600;
     text-align: center;
@@ -96,7 +103,7 @@ nav > ul > li:hover{
 }
 .two > .card-btn{
     position: absolute;
-    bottom: 10rem;
+    bottom: 5rem;
 }
 .eight{
     justify-content: flex-start;
@@ -108,20 +115,25 @@ nav > ul > li:hover{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+.detail > .card-txt > p{
     font-size: var(--font-size);
     font-weight: 600;
     text-align: center;
     color: var(--font-color);
+    margin-bottom: 10px;
 }
 footer{
-    height: 30vh;
+    width: 100%;
+    height: 20vh;
     background-color: #fff;
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 10px;
 }
 footer > ul{
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,6 +143,7 @@ footer > ul{
     flex: 1;
 }
 footer > .footer-txt{
+    width: 90%;
     text-align: center;
     flex: 0.5;
 }
@@ -174,6 +187,8 @@ main > div.seven{
 /*** 공통으로 들어가는 영역 ***/
 .card{
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     padding: 5rem;
     display: flex;
     justify-content: center;
@@ -207,13 +222,13 @@ video{
 
 /*** 공통 버튼 ***/
 .btn{
-    width: 200px;
+    width: 270px;
     text-align: center;
     font-size: 1rem;
     border-radius: 5px;
     display: inline-block;
-    padding: 10px 60px;
-    opacity: 0.8;
+    padding: 10px;
+    opacity: 0.9;
     margin-right: 5px;
     cursor: pointer;
 }
@@ -228,22 +243,94 @@ video{
 /* ************************************** */
 
 @media screen and (max-width: 1200px) {
+    nav > .nav-menu, nav > .icons{
+        display: none;
+    }
+    nav > .meun-btn{
+        display: block;
+        width: 60px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgba(6, 6, 6, 0.2);
+    }
+    .zero > p{
+        font-size: 3rem;
+    }
+    header, .card{
+        background-position: center;
+    }
+    .card > .card-position > p, .two > .card-txt > p{
+        font-size: 2.5rem;
+    }
     .btn{
-        width: 150px;
+        width: 230px;
+        font-size: 12px;
     }
     .detail{
-        bottom: 10rem;
+        left: 2rem;
+        bottom: 3rem;
+    }
+    .detail > .card-txt > p{
         font-size: 2rem;
     }
+    footer > ul{
+        flex: 0.6;
+    }
+    footer > .footer-txt{
+        flex: 0.4;
+    }
 }
-@media screen and (max-width: 823px) {
+@media screen and (max-width: 824px) {
+    .card{
+        padding: 3rem;
+    }
+    .two > .card-txt > p:last-of-type{
+        font-size: 10px;
+    }
+    .two > .card-txt > p, .detail > .card-txt > p{
+        font-size: 1.5rem;
+    }
     .detail{
-        position: absolute;
-        left: 10rem;
-        bottom: 5rem;
+        bottom: 3rem;
     }
     .detail > .card-btn > .btn{
-        width: 400px;
+        width: 500px;
+    }
+}
+@media screen and (max-width: 425px) {
+    nav{
+        width: 90%;
+    }
+    nav > .meun-btn{
+        width: 40px;
+        text-align: center;
+    }
+    nav > .meun-btn > span{
+        font-size: 10px;
+    }
+    .zero > p{
+        font-size: 2rem;
+    }
+    .card{
+        padding: 2rem;
+    }
+    .card > .card-position > p{
+        font-size: 1.5rem;
+    }
+    .btn{
+        width: 140px;
+        font-size: 10px;
+    }
+    .detail > .card-txt > p{
+        font-size: 1rem;
+    }
+    .detail > .card-btn > .btn{
+        width: 300px;
+    }
+    footer > ul{
+        width: 95%;
+        gap: 5px;
     }
 }
 
