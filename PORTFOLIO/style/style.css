@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+:root{
+    --bg-color: #E8F1F8;
+    --font-color: #2e5876;
+}
+body{background-color: var(--bg-color);}
+
+/* 페이지 01 */
+.page-01{height: 100%; width: 100%; display: flex; justify-content: center; position: relative;}
+.menu span{font-size: 1rem; font-family: 'S-CoreDream-4-Regular'; color: var(--font-color); opacity: 1;}
+.title{height: 100%; display: flex; justify-content: center; flex-direction: column; line-height: 100px; color: var(--font-color);}
+.title > h2{font-size: 4rem; transform: translateX(200%);}
+.title > h1{font-size: 6rem; transform: translateX(-200%);}
+.title h2,
+.title h1 {opacity: 0;}
+.sub-title{position: absolute; top: 50%; transform: translateY(-50%);}
+.sub-title > p{font-size: 2rem; font-family: 'S-CoreDream-6-Bold'; color: var(--font-color); opacity: 0;}
