@@ -3,16 +3,50 @@
 :root{
     --bg-color: #E8F1F8;
     --font-color: #2e5876;
+    --font-hover-color: #fff;
 }
-body{background-color: var(--bg-color);}
 
-/* 페이지 01 */
-.page-01{height: 100%; width: 100%; display: flex; justify-content: center; position: relative;}
-.menu span{font-size: 1rem; font-family: 'S-CoreDream-4-Regular'; color: var(--font-color); opacity: 1;}
+/* 공통 */
+body{background-color: var(--bg-color);}
+.Home, .Profile, .project, .Design, .last{height: 100%; width: 100%;}
+.Profile > h2, .project > h2, .Design > h2{padding: 100px 50px 50px; font-size: 3rem; color: var(--font-color); text-shadow: 4px 4px 4px rgba(30, 30, 30, 0.25);}
+
+/* Home */
+.Home{display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
+.menu, .Home-icon{margin: 1.5rem 0; opacity: 0;}
+.menu{position: fixed; top: 0;}
+.menu span{margin: 0 15px; padding: 5px 10px; font-size: 1rem; font-family: 'S-CoreDream-4-Regular'; color: var(--font-color);}
+.menu span:hover{padding: 5px 10px; background-color: var(--font-color); color: var(--font-hover-color); border-radius: 20px;}
 .title{height: 100%; display: flex; justify-content: center; flex-direction: column; line-height: 100px; color: var(--font-color);}
 .title > h2{font-size: 4rem; transform: translateX(200%);}
 .title > h1{font-size: 6rem; transform: translateX(-200%);}
 .title h2,
 .title h1 {opacity: 0;}
-.sub-title{position: absolute; top: 50%; transform: translateY(-50%);}
+.sub-title{position: absolute; left: 50%; transform: translate(-50%, -50%);}
 .sub-title > p{font-size: 2rem; font-family: 'S-CoreDream-6-Bold'; color: var(--font-color); opacity: 0;}
+
+/* Profile */
+.Profile-wrap{padding: 0 180px; display: flex;}
+.Profile-img{flex: 1;}
+.Profile-img > img{width: 300px; height: 500px;}
+.Profile-txt{flex: 1; display: flex; flex-direction: column;}
+.Profile-txt > div{flex: 1;}
+.Profile-txt hr{border: 2px solid var(--font-color);}
+.Profile-txt p{font-size: 1.2rem; color: var(--font-color);}
+.Profile-txt span{margin: 1rem 0; display: block; font-size: 1rem;}
+
+/* project */
+.project-wrapper{padding: 0 180px; display: flex;}
+.project-wrap{margin: 0 5rem; position: relative;}
+.project-wrap > span{position: absolute; bottom: 10px; left: -60px; font-size: 2rem; color: var(--font-color);}
+.project-wrap > img{width: 300px; height: 400px;}
+
+/* Design */
+
+/* last */
+.last{display: flex; justify-content: center; align-items: center; color: var(--font-color);}
+.L-txt{display: flex; flex-direction: column; align-items: flex-end;}
+.L-title{line-height: 100px;}
+.L-title > h2{font-size: 4rem;}
+.L-title > h1{font-size: 6rem;}
+.L-sub-title{font-size: 1.5rem; text-align: right;}
