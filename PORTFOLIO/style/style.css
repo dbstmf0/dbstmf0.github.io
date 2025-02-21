@@ -7,7 +7,7 @@
 }
 
 /* 공통 */
-body{ margin: 0 auto; background-color: var(--bg-color);}
+body{background-color: var(--bg-color);}
 #Home, #Profile, #Project, #Design, #Contact{height: 100%; width: 100%;}
 #Profile > h2, #Project > h2, #Design > h2{padding: 100px 50px 50px; font-size: 3rem; color: var(--font-color); text-shadow: 4px 4px 4px rgba(30, 30, 30, 0.25);}
 .active{padding: 5px 10px; background-color: var(--font-color); color: var(--font-hover-color); border-radius: 20px;}
