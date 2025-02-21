@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간계산기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{height: 100vh; color: #333; background-color: #eee;}
+        h1{text-align: center; margin: 30px;}
+        main{width: 500px; margin: 10px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.3);}
+        p{margin: 5px 0;}
+        select, button{width: 100%; margin-bottom: 20px; padding: 8px;}
+        .date-wrap{display: flex; gap: 20px;}
+        .result{padding: 10px; margin-bottom: 10px; border-radius: 5px; text-align: center; font-weight: bolder; background-color: rgb(255, 230, 2);}
+        .time{text-align: center; font-weight: bolder;} 
+    </style>
+</head>
+<body>
+    <h1>특정일까지 남은 시간 계산기</h1>
+    <main>
+        <p>시작 시간</p>
+        <div class="date-wrap">
+            <select id="start-year"></select>
+            <select id="start-month"></select>
+            <select id="start-day"></select>
+        </div>
+        <p>목표 시간</p>
+        <div class="date-wrap">
+            <select id="target-year"></select>
+            <select id="target-month"></select>
+            <select id="target-day"></select>
+        </div>
+        <button>결과보기</button>
+        <div class="result n-days">남은 날짜</div>
+        <div class="result n-times">남은 시간</div>
+        <div class="time">현재 날짜</div>
+    </main>
+    <script src="./1218_date_calc.js"></script>
+</body>
+</html>
