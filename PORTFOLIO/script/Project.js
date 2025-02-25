@@ -1,163 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { product } from "./product.js";
 
-    const links = gsap.utils.toArray("#menu span a");
+document.addEventListener('DOMContentLoaded',()=>{
+    const numberItems = document.querySelectorAll('.number li');
+    const Img = document.querySelector('.project-img img');
+    const Title = document.querySelector('.project-txt-wrap h2');
+    const Detail = document.querySelector('.project-txt-wrap p:nth-of-type(1)');
+    const Date = document.querySelector('.project-txt-wrap p:nth-of-type(2)');
+    const Participation = document.querySelector('.project-txt-wrap p:nth-of-type(3)');
+    const Distribution = document.querySelector('.project-txt-wrap p:nth-of-type(4)');
+    const Skills = document.querySelector('.project-txt-wrap div');
 
-    //active 클래스를 추가
-    const setActive = (link) => {
-        links.forEach((el) => el.classList.remove("active"));
-        link.classList.add("active");
-    };
+    let currentIndex = 0;
+    let interval;
 
-    //섹션별 active 변경 가능하도록 설정
-    const setActiveSection = (sectionId) => {
-        const activeLink = links.find((link) => link.getAttribute("href") === sectionId);
-        if (activeLink) {
-            setActive(activeLink);
-        }
-    };
+    const updateProject = ((idx)=>{
+        const selectedProject = product.find((p)=>p.id === idx +1);
+        if(!selectedProject) return;
 
-    //모든 active 제거
-    const resetActiveMenu = () => {
-        links.forEach((el) => el.classList.remove("active"));
-    };
+        const {img,name,detail,date,participation,skills,distribution} = selectedProject;
 
-    const updateActiveMenu = (list) => {
-        const projectSection = document.querySelector("#Project");
-        const rect = projectSection.getBoundingClientRect();
+        Img.src = img;
+        Title.textContent = name;
+        Detail.textContent = detail;
+        Date.textContent = date;
+        Participation.textContent = participation;
+        Distribution.textContent = distribution;
 
-        //#Project가 화면 안에 있을 때만 active 변경
-        if (rect.top >= window.innerHeight || rect.bottom <= 0) {
-            return; //#Project가 화면을 벗어나면 실행하지 않음
-        }
-
-        let currentIndex = 0;
-        let minDistance = Infinity;
-
-        list.forEach((item, idx) => {
-            const link = item.querySelector("a");
-            if (!link) return;
-
-            const rect = link.getBoundingClientRect();
-            const distance = Math.abs(rect.left - window.innerWidth / 2);
-
-            if (distance < minDistance) {
-                minDistance = distance;
-                currentIndex = idx;
-            }
+        Skills.innerHTML = ''
+        skills.forEach((skill)=>{
+            const skillTag = document.createElement('p');
+            skillTag.textContent = skill;
+            skillTag.classList.add('skill-btn');
+            Skills.appendChild(skillTag);
         });
 
-        const activeLinkHref = list[currentIndex]?.querySelector("a")?.getAttribute("href");
-        if (!activeLinkHref) return;
+        numberItems.forEach((el)=>{
+            el.classList.remove('toggle')});
+            numberItems[idx].classList.add('toggle');
+        });
 
-        //#Project가 보일 때만 active 적용
-        setActiveSection("#Project");
-    };
+        const Auto=()=>{
+            interval = setInterval(()=>{
+                currentIndex = (currentIndex + 1) % numberItems.length;
+                updateProject(currentIndex);
+            },3000);
+        };
+        updateProject(currentIndex);
+        Auto();
 
-    ScrollTrigger.matchMedia({
-        "(min-width: 1024px)": () => {
-            const list = gsap.utils.toArray("#Project ul li");
-
-            const scrollTween = gsap.to(list, {
-                xPercent: -100 * (list.length - 1),
-                ease: "none",
-                scrollTrigger: {
-                    id: "projectScroll",
-                    trigger: "#Project",
-                    pin: true,
-                    scrub: 1,
-                    start: "top top",
-                    end: `+=${list.length * window.innerWidth}`,
-                    invalidateOnRefresh: true,
-                    onUpdate: () => updateActiveMenu(list)
-                }
+        numberItems.forEach((item,idx)=>{
+            item.addEventListener('click',()=>{
+                currentIndex = idx;
+                updateProject(currentIndex);
             });
-
-            // img-box 모션
-            gsap.utils.toArray('.img-box').forEach((imgBox)=>{
-                //img-box가 커지는 애니이션 - 오른쪽 -> 중앙에서 끝
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: imgBox,
-                        containerAnimation: scrollTween,
-                        start: 'center right',
-                        end: 'center center',
-                        scrub: true
-                    }
-                })
-                .to(imgBox, {'clip-path':'inset(0%)', ease:'none', duration:1},0)
-
-                //img-box가 작아지는 애니이션 - 중앙 -> 왼쪽에서 끝
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: imgBox,
-                        containerAnimation: scrollTween,
-                        start: 'center center',
-                        end: 'center left',
-                        scrub: true,
-                    }
-                })
-                .to(imgBox, {'clip-path':'inset(30%)', ease:'none', duration:1},0)
-            });
-
-            // txt-box 모션
-            gsap.utils.toArray('.txt-box').forEach((txtBox)=>{
-                //txt-box가 커지는 애니이션 - 오른쪽 -> 중앙에서 끝
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: txtBox,
-                        containerAnimation: scrollTween,
-                        start: 'center 70%',
-                        end: 'center 40%',
-                        scrub: true
-                    }
-                })
-                .to(txtBox, {'opacity':'1', 'x':-100},0)
-
-                //txt-box가 작아지는 애니이션 - 중앙 -> 왼쪽에서 끝
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: txtBox,
-                        containerAnimation: scrollTween,
-                        start: 'center 30%',
-                        end: 'center 20%',
-                        scrub: true
-                    }
-                })
-                .to(txtBox, {'opacity':'0'},0)
-            });
-
-            //#Design이 화면에서 보일 때 active 변경
-            ScrollTrigger.create({
-                trigger: "#Design",
-                start: "top 60%",
-                end: "top 0%",
-                onEnter: () => {
-                    resetActiveMenu();
-                    setActiveSection("#Design");
-                },
-                onEnterBack: () => {
-                    updateActiveMenu(list);
-                    setActiveSection("#Design");
-                }
-            });
-
-            //#Contact이 화면에서 보일 때 active 변경
-            ScrollTrigger.create({
-                trigger: "#Contact",
-                start: "top 60%",
-                end: "top 0%",
-                onEnter: () => {
-                    resetActiveMenu();
-                    setActiveSection("#Contact");
-                },
-                onEnterBack: () => updateActiveMenu(list)
-            });
-
-            return () => {
-                scrollTween.kill();
-                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            };
-        }
-    });
+        });
 });
