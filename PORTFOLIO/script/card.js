@@ -1,18 +1,15 @@
 document.addEventListener('DOMContentLoaded',()=>{
     const cards = document.querySelectorAll('.card');
-    let isFlipped = false;
 
-    setInterval(()=>{
-        isFlipped = !isFlipped;
+    const settingCard = async ()=>{
+        for(let i = 0; i < cards.length; i++){
+            cards[i].style.transform = 'perspective(500px) rotateY(180deg)';
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
-        cards.forEach((card,idx)=>{
-            setTimeout(()=>{
-                if(isFlipped){
-                    card.style.transform = 'perspective(500px) rotateY(180deg)';
-                } else{
-                    card.style.transform = 'perspective(500px) rotateY(0deg)';
-                }
-            },idx * 500);
-        });
-    },4000)
+            cards[i].style.transform = 'perspective(500px) rotateY(0deg)';
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+        setTimeout(settingCard ,cards.length * 2000);
+    };
+    settingCard();
 });
