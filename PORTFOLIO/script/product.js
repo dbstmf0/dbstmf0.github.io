@@ -7,7 +7,8 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML","#CSS","#ES6","#GSAP","ScrollTrigger","#Flex","#Google Font","#Figma"],
-    img: './images/tom6.jfif'
+    img: './images/tom6.jfif',
+    url: 'https://dbstmf0.github.io/PORTFOLIO/index.html'
     },
     {
     id: 2,
@@ -17,7 +18,8 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#React","#React Router","#react-slick","#TMdb API","#SCSS","#Axios","#Figma"],
-    img: './images/tom6.jfif'
+    img: './images/tom6.jfif',
+    url: 'https://dbstmf0.github.io/netflix_clone/'
     },
     {
     id: 3,
@@ -27,7 +29,8 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#ES6", "#LocalStorage", "#Position", "#Figma"],
-    img: './images/tom6.jfif'
+    img: './images/tom6.jfif',
+    url: 'https://dbstmf0.github.io/momentum/index.html'
     },
     {
     id: 4,
@@ -37,7 +40,8 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#Flex", "#Figma"],
-    img: './images/tom6.jfif'
+    img: './images/tom6.jfif',
+    url: 'https://dbstmf0.github.io/TESLA/index.html'
     },
     {
     id: 5,
@@ -47,6 +51,7 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#Grid", "#Flex", "#Google Font", "#Figma"],
-    img: './images/tom6.jfif'
+    img: './images/tom6.jfif',
+    url: 'https://dbstmf0.github.io/anillo/index.html'
     },
 ];

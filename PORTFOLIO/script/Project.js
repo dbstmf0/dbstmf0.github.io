@@ -3,6 +3,7 @@ import { product } from "./product.js";
 document.addEventListener('DOMContentLoaded',()=>{
     const numberItems = document.querySelectorAll('.number li');
     const Img = document.querySelector('.project-img img');
+    const UrlElem = document.querySelector('.project-img a');
     const Title = document.querySelector('.project-txt-wrap h2');
     const Detail = document.querySelector('.project-txt-wrap p:nth-of-type(1)');
     const Date = document.querySelector('.project-txt-wrap p:nth-of-type(2)');
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     let currentIndex = 0;
     let interval;
+    let selectedProject = null;
 
     const updateProject = ((idx)=>{
         const selectedProject = product.find((p)=>p.id === idx +1);
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             interval = setInterval(()=>{
                 currentIndex = (currentIndex + 1) % numberItems.length;
                 updateProject(currentIndex);
-            },3000);
+            },4000);
         };
         updateProject(currentIndex);
         Auto();
@@ -53,5 +55,12 @@ document.addEventListener('DOMContentLoaded',()=>{
                 currentIndex = idx;
                 updateProject(currentIndex);
             });
+        });
+
+        UrlElem.addEventListener('click',(e)=>{
+            e.preventDefault();
+            if(selectedProject && selectedProject.url){
+                window.open(selectedProject.url, '_blank');
+            }
         });
 });

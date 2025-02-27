@@ -71,7 +71,7 @@ nav {
 .left-img > img {
     width: 250px;
     height: 250px;
-    transform: translate(240px, -50px);
+    transform: translate(380px, -100px);
 }
 .left-txt {
     margin-right: 5rem;
@@ -159,14 +159,21 @@ nav {
 .card > div {
   width: 150px;
   height: 190px;
+  line-height: 190px;
   border-radius: 30px;
   background-color: var(--point-bg-color);
+  font-size: 1.5rem;
   color: var(--bg-color);
   backface-visibility: hidden;
   grid-area: 1/1/1/1;
 }
 .back {
+  line-height: 254px !important;
+  background-color: #5C3F2B !important;
   transform: rotateY(180deg);
+}
+.back > img{
+  width: 64px;
 }
 
 /* #project */
@@ -203,12 +210,25 @@ nav {
   background-color: var(--point-bg-color);
   gap: 5rem;
 }
-.project-img > img {
-  width: 400px;
+.project-img{
+  flex: 1;
+  height: 400px;
+  position: relative;
+}
+.project-img > a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.project-img > a > img {
+  width: 100%;
   height: 100%;
   border-radius: 30px;
 }
 .project-txt-wrap {
+  flex: 2;
   color: var(--bg-color);
 }
 .project-txt-wrap > h2 {
@@ -220,6 +240,7 @@ nav {
   font-size: 1.5rem;
 }
 .project-txt-wrap > p:nth-of-type(1) {
+  line-height: 2.5rem;
   border-top: 2px solid var(--bg-color);
 }
 .project-txt-wrap > p:nth-of-type(2),
