@@ -12,4 +12,16 @@ document.addEventListener('DOMContentLoaded',()=>{
         setTimeout(settingCard ,cards.length * 2000);
     };
     settingCard();
+
+    cards.forEach((card)=>{
+        card.addEventListener('click',()=>{
+            if(card.classList.contains('flipped')){
+                card.style.transform = 'perspective(500px) rotateY(0deg)';
+                card.classList.remove('flipped');
+            } else{
+                card.style.transform = 'perspective(500px) rotateY(180deg)';
+                card.classList.add('flipped');
+            }
+        });
+    });
 });
