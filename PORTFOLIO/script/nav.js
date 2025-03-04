@@ -27,11 +27,37 @@ document.addEventListener('DOMContentLoaded',()=>{
                 ease: 'power2.out'
             })
         }
-    });
 
+            //scroll로 menu 이동
+    let currentSection = null;
+
+    document.querySelectorAll('section').forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop <= window.innerHeight*0.3){
+            currentSection = section;
+        }
+    });
+    if(currentSection){
+        const id = currentSection.getAttribute('id');
+
+        menuItems.forEach(menuItem=>{
+            const isMatching = menuItem.textContent.toLocaleLowerCase().replace(/\s/g, '-')=== id;
+
+            if(isMatching && activeMenu !==menuItem){
+                activeMenu?.classList.remove('active');
+                menuItem.classList.add('active');
+                activeMenu = menuItem;
+            }else if(!isMatching && menuItem.classList.contains('active')){
+                menuItem.classList.remove('active');
+            }
+        });
+    }
+});
 
     // menu 이동
     menuItems.forEach((menuItem)=>{
+        console.log(menuItem)
         menuItem.addEventListener('click',(e)=>{
             e.preventDefault();
 

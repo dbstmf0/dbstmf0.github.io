@@ -71,7 +71,7 @@ nav {
 .left-img > img {
     width: 200px;
     height: 200px;
-    transform: translate(280px, -50px);
+    transform: translate(120%, -50px);
 }
 .left-txt {
     margin-right: 5rem;
@@ -88,23 +88,21 @@ nav {
 /* home-right */
 .home-right {
     height: 100%;
+    padding: 4rem;
     position: relative;
     flex: 2;
     background-color: var(--point-bg-color);
     border-radius: 30px;
 }
-.home-right > p {
+.home-right > span {
+    margin-right: 1rem;
+    line-height: 4rem;
     display: inline-block;
-    font-size: 8rem;
+    font-size: 3rem;
     color: var(--bg-color);
+    opacity: 0;
 }
-.right-txt {
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translate(-50%, -10%);
-    animation: text-expansion 2s ease-in;
-}
+
 
 /* proflie */
 .proflie {
