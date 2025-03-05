@@ -57,6 +57,7 @@ nav {
     padding: 4rem 0;
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
     height: 90%;
 }
 
@@ -355,4 +356,18 @@ nav {
 }
 .f-wrap > div > p:first-of-type {
     margin: 2rem 0 0;
+}
+
+/* 반응형 */
+@media screen and (max-with:425px) {
+  .wrap{
+    flex-wrap: wrap;
+  }
+  .menu {
+    font-size: 1rem;
+  }
+  .menu > span{
+    padding: 0;
+    margin: 0;
+  }
 }
