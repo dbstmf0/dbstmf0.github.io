@@ -1,4 +1,4 @@
-export const product = [
+const product = [
     {
     id: 1,
     name: "Protfolio Website",
