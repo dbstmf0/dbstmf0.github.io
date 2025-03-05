@@ -2,12 +2,21 @@ document.addEventListener('DOMContentLoaded',()=>{
     const navBar = document.querySelector('nav');
     const homeSection = document.querySelector('#home');
     const menuItems = document.querySelectorAll('.menu > span');
-    let activeMenu = null;
+    const logo = document.querySelector('.pix-logo a');
+    let isNavFixd = false;
+
+    const updateActiveMenu=(id)=>{
+        menuItems.forEach(menuItem=>{
+            const isMatching = menuItem.textContent.toLowerCase().replace(/\s/g, '-') === id;
+            menuItem.classList.toggle('active', isMatching);
+        });
+    }
 
     window.addEventListener('scroll',()=>{
         const homebottom = homeSection.getBoundingClientRect().bottom;
 
-        if(homebottom <= 0){
+        if(homebottom <= 0 && !isNavFixd){
+            isNavFixd = true;
             gsap.to(navBar,{
                 position: 'fixed',
                 top: 0,
@@ -16,8 +25,10 @@ document.addEventListener('DOMContentLoaded',()=>{
                 transform: 'translate(-50%)',
                 duration: 0.5,
                 ease: 'power2.out'
-            })
-        } else{
+            });
+            updateActiveMenu('about-me');
+        } else if(homebottom > 0){
+            isNavFixd = false;
             gsap.to(navBar,{
                 position: 'relative',
                 width: '100%',
@@ -27,51 +38,48 @@ document.addEventListener('DOMContentLoaded',()=>{
                 ease: 'power2.out'
             })
         }
-
-            //scroll로 menu 이동
-    let currentSection = null;
-
-    document.querySelectorAll('section').forEach(section=>{
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if(sectionTop <= window.innerHeight*0.3){
-            currentSection = section;
+        if(homebottom > 0){
+            menuItems.forEach(menuItem=>menuItem.classList.remove('active'));
         }
-    });
-    if(currentSection){
-        const id = currentSection.getAttribute('id');
-
-        menuItems.forEach(menuItem=>{
-            const isMatching = menuItem.textContent.toLocaleLowerCase().replace(/\s/g, '-')=== id;
-
-            if(isMatching && activeMenu !==menuItem){
-                activeMenu?.classList.remove('active');
-                menuItem.classList.add('active');
-                activeMenu = menuItem;
-            }else if(!isMatching && menuItem.classList.contains('active')){
-                menuItem.classList.remove('active');
-            }
-        });
-    }
 });
+
+    //logo를 클릭하면 #home으로 이동
+    logo.addEventListener('click',(e)=>{
+        e.preventDefault();
+        gsap.to(window,{
+            duration: 1,
+            scrollTo: homeSection,
+            ease: 'power2.out',
+            onComplete:()=>{menuItems.forEach(menuItem=>menuItem.classList.remove('active'))}
+        });
+    });
+
+    //scroll로 menu 이동
+    document.querySelectorAll('section').forEach(section=>{
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top 40%',
+            end: 'bottom 50%',
+            onEnter: ()=>updateActiveMenu(section.getAttribute('id')),
+            onEnterBack: ()=>updateActiveMenu(section.getAttribute('id'))
+        });
+    });
 
     // menu 이동
     menuItems.forEach((menuItem)=>{
-        console.log(menuItem)
         menuItem.addEventListener('click',(e)=>{
             e.preventDefault();
-
-            if(activeMenu){
-                activeMenu.classList.remove('active');
-            }
-            menuItem.classList.add('active');
-            activeMenu = menuItem;
 
             const sectionID = menuItem.textContent.toLowerCase().replace(/\s/g, '-');
             const targetSection = document.querySelector(`#${sectionID}`);
 
             if(targetSection){
-                gsap.to(window, {duration: 1, scrollTo: targetSection});
+                gsap.to(window,{
+                    duration: 1,
+                    scrollTo: targetSection,
+                    ease: 'power2.out',
+                    onComplete: ()=>updateActiveMenu(sectionID)
+                });
             }
         });
     });

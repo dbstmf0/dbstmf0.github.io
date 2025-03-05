@@ -18,7 +18,7 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#React","#React Router","#react-slick","#TMdb API","#SCSS","#Axios","#Figma"],
-    img: './images/tom6.jfif',
+    img: './images/netflix-img.svg',
     url: 'https://dbstmf0.github.io/netflix_clone/'
     },
     {
@@ -29,7 +29,7 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#ES6", "#LocalStorage", "#Position", "#Figma"],
-    img: './images/tom6.jfif',
+    img: './images/momentum-img.svg',
     url: 'https://dbstmf0.github.io/momentum/index.html'
     },
     {
@@ -40,7 +40,7 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#Flex", "#Figma"],
-    img: './images/tom6.jfif',
+    img: './images/tesla-img.svg',
     url: 'https://dbstmf0.github.io/TESLA/index.html'
     },
     {
@@ -51,7 +51,7 @@ export const product = [
     participation: "참여율 : 100%",
     distribution: "배포방식 : GitHub",
     skills: ["#HTML", "#CSS", "#Grid", "#Flex", "#Google Font", "#Figma"],
-    img: './images/tom6.jfif',
+    img: './images/anillO-img.svg',
     url: 'https://dbstmf0.github.io/anillo/index.html'
     },
 ];
