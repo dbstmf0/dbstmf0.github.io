@@ -56,7 +56,6 @@ const product = [
     },
 ];
 
-
 document.addEventListener('DOMContentLoaded',()=>{
     const numberItems = document.querySelectorAll('.number li');
     const Img = document.querySelector('.project-img img');
