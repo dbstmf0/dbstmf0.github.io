@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     let currentIndex = 0;
     let interval;
     let selectedProject = null;
-console.log(product);
+
     const updateProject = ((idx)=>{
         selectedProject = product.find((p)=>p.id === idx +1);
         if(!selectedProject) return;
